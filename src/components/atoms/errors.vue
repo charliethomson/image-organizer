@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useStore } from "../../store";
+import { MutationTypes } from "../../store/types";
 
 const store = useStore();
 const errors = computed(() => store.state.errors);
-const removeError = (id: string) => store.commit("removeError", id);
+const removeError = (id: string) => store.commit(MutationTypes.removeError, id);
 </script>
 
 <template>
